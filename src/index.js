@@ -6,7 +6,7 @@ const { serveHTTP } = require("stremio-addon-sdk");
 const addonInterface = require("./addon");
 const turmasRoutes = require('./routes/turmas');
 const filesRoutes = require('./routes/files');
-const professorRoutes = require('../../professor/routes/professor');
+const professorRoutes = require('./routes/professor'); // Caminho atualizado
 const app = express();
 const EXPRESS_PORT = process.env.PORT || 7001; // Porta para o Express
 const STREMIO_PORT = 7000; // Porta para o Stremio Addon SDK
@@ -17,8 +17,8 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/resources', express.static(path.join(__dirname, 'resources')));
 app.use('/professor', professorRoutes);
-app.use('/professor', express.static(path.join(__dirname, '../../professor/public')));
-console.log(path.join(__dirname, '../../professor/public'));
+app.use('/professor', express.static(path.join(__dirname, 'public/professor'))); // Caminho atualizado
+console.log(path.join(__dirname, 'public/professor'));
 // Usar as rotas das turmas
 app.use('/turmas', turmasRoutes);
 // Usar as rotas de arquivos

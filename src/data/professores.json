@@ -1,0 +1,9 @@
+{
+    "turmas": [
+        { "nome": "8º Ano A" },
+        { "nome": "8º Ano B" },
+        { "nome": "9º Ano A" },
+        { "nome": "9º Ano B" },
+        { "nome": "Técnico: 1ª série Desenvolvimento de Sistemas" }
+    ]
+}

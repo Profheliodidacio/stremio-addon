@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Professor</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard do Professor</h1>
+        <nav>
+            <ul>
+                <li><a href="#turmas">Turmas</a></li>
+                <li><a href="#gabaritos">Gabaritos</a></li>
+                <li><a href="#notas">Notas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="turmas">
+            <h2>Turmas</h2>
+            <ul id="turmas-lista">
+                <!-- Lista de turmas será carregada dinamicamente -->
+            </ul>
+        </section>
+
+        <section id="gabaritos">
+            <h2>Gabaritos</h2>
+            <form id="gabarito-form">
+                <label for="turma">Turma:</label>
+                <select id="turma" required>
+                    <option value="" disabled selected>Selecione uma turma</option>
+                </select>
+                <label for="arquivo-gabarito">Enviar Gabarito:</label>
+                <input type="file" id="arquivo-gabarito" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="notas">
+            <h2>Notas</h2>
+            <ul id="notas-lista">
+                <!-- Lista de notas será carregada dinamicamente -->
+            </ul>
+        </section>
+    </main>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
