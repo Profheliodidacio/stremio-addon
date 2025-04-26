@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Gerenciar Arquivos</title>
+</head>
+<body>
+    <header>
+        <h1>Gerenciar Arquivos</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Início</a></li>
+                <li><a href="/upload-aulas.html">Upload de Aulas</a></li>
+                <li><a href="/professor/index.html">Dashboard do Professor</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="upload-arquivos">
+            <h2>Upload de Arquivo</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <label for="turma">Turma:</label>
+                <select id="turma" required>
+                    <option value="" disabled selected>Selecione a Turma</option>
+                </select>
+
+                <label for="disciplina">Disciplina:</label>
+                <select id="disciplina" required>
+                    <option value="" disabled selected>Selecione a Disciplina</option>
+                </select>
+
+                <label for="semana">Semana:</label>
+                <select id="semana" required>
+                    <option value="" disabled selected>Selecione a Semana</option>
+                    <option value="1">Semana 1</option>
+                    <option value="2">Semana 2</option>
+                    <option value="3">Semana 3</option>
+                    <option value="4">Semana 4</option>
+                </select>
+
+                <label for="file">Enviar Arquivo:</label>
+                <input type="file" id="file" required>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="listar-arquivos">
+            <h2>Listar Arquivos</h2>
+            <form id="listForm">
+                <label for="listTurma">Turma:</label>
+                <select id="listTurma" required>
+                    <option value="" disabled selected>Selecione a Turma</option>
+                </select>
+
+                <label for="listDisciplina">Disciplina:</label>
+                <select id="listDisciplina" required>
+                    <option value="" disabled selected>Selecione a Disciplina</option>
+                </select>
+
+                <button type="submit">Listar</button>
+            </form>
+            <ul id="fileList"></ul>
+        </section>
+    </main>
+
+    <script src="/js/manage.js"></script>
+</body>
+</html>

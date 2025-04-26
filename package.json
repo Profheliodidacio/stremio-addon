@@ -1,0 +1,17 @@
+{
+  "name": "stremio-addon",
+  "version": "1.0.0",
+  "description": "A Stremio addon for streaming content.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express-fileupload": "^1.5.1",
+    "is-port-reachable": "^4.0.0",
+    "stremio-addon-sdk": "^1.0.0"
+  },
+  "author": "Prof Helio Lima CAIC",
+  "license": "MIT"
+}
