@@ -10,7 +10,10 @@
   "dependencies": {
     "express-fileupload": "^1.5.1",
     "is-port-reachable": "^4.0.0",
-    "stremio-addon-sdk": "^1.0.0"
+    "stremio-addon-sdk": "^1.0.0",
+    "is-port-reachable": "^4.0.0",
+    "portscanner": "^2.2.0",
+    "sanitize-filename": "^1.6.3"
   },
   "author": "Prof Helio Lima CAIC",
   "license": "MIT"
