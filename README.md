@@ -27,8 +27,8 @@ Para iniciar o addon, execute:
 node src/index.js
 ```
 
-O addon estará disponível em `http://localhost:3000` (ou outra porta configurada).
-
+O addon estará disponível em `http://localhost:7000` (ou outra porta configurada).
+ou https://stremio-addon-14na.onrender.com
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
