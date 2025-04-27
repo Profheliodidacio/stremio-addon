@@ -1,3 +1,15 @@
+
+// Lógica para abrir e fechar a sidebar no index.html
+const menuButtonIndex = document.getElementById('menuButtonIndex');
+const sidebarIndex = document.getElementById('sidebarIndex');
+const mainContentIndex = document.getElementById('mainContentIndex');
+
+menuButtonIndex.addEventListener('click', () => {
+    sidebarIndex.classList.toggle('-translate-x-full');
+    mainContentIndex.classList.toggle('ml-64');
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const content = document.getElementById("content");
 

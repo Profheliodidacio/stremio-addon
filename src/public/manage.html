@@ -3,70 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+    <script src="js/tailwind.js"></script>
     <title>Gerenciar Arquivos</title>
+    <!-- CDN do Tailwind CSS -->
+    
 </head>
-<body>
-    <header>
-        <h1>Gerenciar Arquivos</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Início</a></li>
-                <li><a href="/upload-aulas.html">Upload de Aulas</a></li>
-                <li><a href="/professor/index.html">Dashboard do Professor</a></li>
+<body class="bg-gray-100 text-gray-800">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div id="sidebar" class="fixed inset-y-0 left-0 bg-gray-800 text-white w-64 transform -translate-x-full transition-transform duration-300">
+            <div class="p-4">
+                <h2 class="text-2xl font-bold">Menu</h2>
+            </div>
+            <ul class="space-y-2 p-4">
+                <li><a href="/" class="block py-2 px-4 rounded hover:bg-gray-700">Início</a></li>
+                <li><a href="/manage.html" class="block py-2 px-4 rounded hover:bg-gray-700">Gerenciar Arquivos</a></li>
+                <li><a href="/professor/index.html" class="block py-2 px-4 rounded hover:bg-gray-700">Dashboard do Professor</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
 
-    <main>
-        <section id="upload-arquivos">
-            <h2>Upload de Arquivo</h2>
-            <form id="uploadForm" enctype="multipart/form-data">
-                <label for="turma">Turma:</label>
-                <select id="turma" required>
-                    <option value="" disabled selected>Selecione a Turma</option>
-                </select>
+        <!-- Conteúdo Principal -->
+        <div class="flex-1 ml-0 transition-all duration-300" id="mainContent">
+            <header class="bg-white shadow-md p-4 flex items-center justify-between">
+                <button id="menuButton" class="text-gray-800 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold">Gerenciar Arquivos</h1>
+            </header>
 
-                <label for="disciplina">Disciplina:</label>
-                <select id="disciplina" required>
-                    <option value="" disabled selected>Selecione a Disciplina</option>
-                </select>
+            <main class="max-w-4xl mx-auto p-4 bg-white shadow-md rounded mt-4">
+                <h2 class="text-xl font-bold mb-4">Upload de Arquivos</h2>
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <label for="turma" class="block font-bold">Turma:</label>
+                    <select id="turma" class="w-full p-2 border rounded mb-4" required>
+                        <option value="" disabled selected>Selecione a Turma</option>
+                    </select>
 
-                <label for="semana">Semana:</label>
-                <select id="semana" required>
-                    <option value="" disabled selected>Selecione a Semana</option>
-                    <option value="1">Semana 1</option>
-                    <option value="2">Semana 2</option>
-                    <option value="3">Semana 3</option>
-                    <option value="4">Semana 4</option>
-                </select>
+                    <label for="disciplina" class="block font-bold">Disciplina:</label>
+                    <select id="disciplina" class="w-full p-2 border rounded mb-4" required>
+                        <option value="" disabled selected>Selecione a Disciplina</option>
+                    </select>
 
-                <label for="file">Enviar Arquivo:</label>
-                <input type="file" id="file" required>
+                    <label for="semana" class="block font-bold">Semana:</label>
+                    <select id="semana" class="w-full p-2 border rounded mb-4" required>
+                        <option value="" disabled selected>Selecione a Semana</option>
+                        <option value="1">Semana 1</option>
+                        <option value="2">Semana 2</option>
+                        <option value="3">Semana 3</option>
+                        <option value="4">Semana 4</option>
+                    </select>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+                    <label for="file" class="block font-bold">Arquivo:</label>
+                    <input type="file" id="file" class="w-full p-2 border rounded mb-4" required>
 
-        <section id="listar-arquivos">
-            <h2>Listar Arquivos</h2>
-            <form id="listForm">
-                <label for="listTurma">Turma:</label>
-                <select id="listTurma" required>
-                    <option value="" disabled selected>Selecione a Turma</option>
-                </select>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Enviar</button>
+                </form>
 
-                <label for="listDisciplina">Disciplina:</label>
-                <select id="listDisciplina" required>
-                    <option value="" disabled selected>Selecione a Disciplina</option>
-                </select>
+                <h2 class="text-xl font-bold mt-8 mb-4">Arquivos Enviados</h2>
+                <ul id="fileList" class="list-disc pl-5">
+                    <!-- Lista de arquivos será carregada aqui -->
+                </ul>
+            
 
-                <button type="submit">Listar</button>
-            </form>
-            <ul id="fileList"></ul>
-        </section>
-    </main>
+                <h2 class="text-xl font-bold mt-8 mb-4">Listar Arquivos</h2>
+                <section id="listar-arquivos">
+                    <form id="listForm" class="mb-4">
+                        <label for="listTurma" class="block font-bold">Turma:</label>
+                        <select id="listTurma" class="w-full p-2 border rounded mb-4" required>
+                            <option value="" disabled selected>Selecione a Turma</option>
+                        </select>
+                    
+                        <label for="listDisciplina" class="block font-bold">Disciplina:</label>
+                        <select id="listDisciplina" class="w-full p-2 border rounded mb-4" required>
+                            <option value="" disabled selected>Selecione a Disciplina</option>
+                        </select>
+                    
+                        
+                    
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Listar</button>
+                    </form>
+                    <button id="listAllButton" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                        Listar Todos os Arquivos
+                    </button>
+                    <ul id="fileList" class="list-disc pl-5">
+                        <!-- Lista de arquivos será carregada aqui -->
+                    </ul>
+                </section>
 
-    <script src="/js/manage.js"></script>
+            </main>
+        </div>
+    </div>
+
+    <script src="js/manage.js"></script>
 </body>
 </html>

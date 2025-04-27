@@ -1,0 +1,48 @@
+{
+    "turmas": [
+        {
+            "nome": "8__Ano_A",
+            "disciplina": "Computacao",
+            "alunos": [
+                {
+                    "nome": "João Silva",
+                    "notas": [
+                        8.5,
+                        9,
+                        7.5
+                    ]
+                },
+                {
+                    "nome": "Maria Oliveira",
+                    "notas": [
+                        9,
+                        8,
+                        8.5
+                    ]
+                }
+            ]
+        },
+        {
+            "nome": "8__Ano_B",
+            "disciplina": "Matematica",
+            "alunos": [
+                {
+                    "nome": "Carlos Souza",
+                    "notas": [
+                        7,
+                        6.5,
+                        8
+                    ]
+                },
+                {
+                    "nome": "Ana Costa",
+                    "notas": [
+                        8.5,
+                        9,
+                        9.5
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -50,3 +50,10 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+/* Modal */
+#modal {
+    display: none; /* Escondido por padrão */
+}
+#modal.show {
+    display: flex; /* Mostra o modal quando a classe "show" é adicionada */
+}

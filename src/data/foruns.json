@@ -1,0 +1,40 @@
+{
+    "foruns": [
+        {
+            "turma": "8__Ano_A",
+            "disciplina": "Computacao",
+            "semana": "Semana_1",
+            "pergunta": "Qual a importância da colaboração digital no mundo atual?",
+            "respostas": [
+                {
+                    "aluno": "João Silva",
+                    "resposta": "A colaboração digital permite maior eficiência no trabalho em equipe.",
+                    "pontuacao": 1
+                },
+                {
+                    "aluno": "Maria Oliveira",
+                    "resposta": "Ajuda na comunicação e compartilhamento de ideias.",
+                    "pontuacao": 1
+                },
+                {
+                    "aluno": "Carlos Souza",
+                    "resposta": "Não sei responder.",
+                    "pontuacao": 0
+                }
+            ]
+        },
+        {
+            "turma": "8__Ano_B",
+            "disciplina": "Matematica",
+            "semana": "Semana_2",
+            "pergunta": "Como a matemática pode ser aplicada no dia a dia?",
+            "respostas": [
+                {
+                    "aluno": "Ana Costa",
+                    "resposta": "A matemática é usada para calcular orçamentos e planejar gastos.",
+                    "pontuacao": 1
+                }
+            ]
+        }
+    ]
+}

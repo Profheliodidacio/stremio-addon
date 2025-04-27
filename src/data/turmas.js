@@ -66,7 +66,7 @@ const turmas = {
             ]
         },
         {
-            "nome": "Técnico: 1ª série Desenvolvimento de Sistemas",
+            "nome": "Técnico - 1ª série Desenvolvimento de Sistemas",
             "disciplinas": [
                 {
                     "nome": "Tecnologias AVA e Métodos de Ensino",

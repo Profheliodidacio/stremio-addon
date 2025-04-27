@@ -1,0 +1,56 @@
+{
+    "quizzes": [
+        {
+            "turma": "8__Ano_A",
+            "disciplina": "Computacao",
+            "semana": "Semana_1",
+            "titulo": "Introdução à Colaboração Digital",
+            "questoes": [
+                {
+                    "pergunta": "O que é colaboração digital?",
+                    "alternativas": [
+                        "Trabalho em equipe usando ferramentas digitais.",
+                        "Uso de redes sociais para lazer.",
+                        "Enviar e-mails para amigos."
+                    ],
+                    "resposta_correta": 0
+                },
+                {
+                    "pergunta": "Qual ferramenta é usada para colaboração digital?",
+                    "alternativas": [
+                        "Google Docs",
+                        "Calculadora",
+                        "Bloco de notas"
+                    ],
+                    "resposta_correta": 0
+                },
+                {
+                    "pergunta": "Qual é um benefício da colaboração digital?",
+                    "alternativas": [
+                        "Aumenta a produtividade.",
+                        "Reduz a comunicação.",
+                        "Evita o uso de tecnologia."
+                    ],
+                    "resposta_correta": 0
+                }
+            ]
+        },
+        {
+            "turma": "8__Ano_B",
+            "disciplina": "Matematica",
+            "semana": "Semana_2",
+            "titulo": "Matemática no Dia a Dia",
+            "questoes": [
+                {
+                    "pergunta": "Como a matemática ajuda no planejamento financeiro?",
+                    "alternativas": [
+                        "Calculando orçamentos.",
+                        "Criando gráficos artísticos.",
+                        "Escrevendo textos."
+                    ],
+                    "resposta_correta": 0
+                }
+            ]
+        }
+    ]
+}

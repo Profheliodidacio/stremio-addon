@@ -1,0 +1,22 @@
+{
+    "gabaritos": [
+        {
+            "turma": "8__Ano_A",
+            "disciplina": "Computacao",
+            "semana": "Semana_1",
+            "arquivo": "gabarito_semana_1.pdf"
+        },
+        {
+            "turma": "8__Ano_A",
+            "disciplina": "Computacao",
+            "semana": "Semana_2",
+            "arquivo": "gabarito_semana_2.pdf"
+        },
+        {
+            "turma": "8__Ano_B",
+            "disciplina": "Matematica",
+            "semana": "Semana_1",
+            "arquivo": "gabarito_semana_1.pdf"
+        }
+    ]
+}

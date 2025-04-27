@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/tailwind.js"></script>
     <title>Dashboard do Professor</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div id="sidebar" class="fixed inset-y-0 left-0 bg-gray-800 text-white w-64 transform -translate-x-full transition-transform duration-300">
+            <div class="p-4">
+                <h2 class="text-2xl font-bold">Menu</h2>
+            </div>
+            <ul class="space-y-2 p-4">
+                <li><a href="/" class="block py-2 px-4 rounded hover:bg-gray-700">Início</a></li>
+                <li><a href="/manage.html" class="block py-2 px-4 rounded hover:bg-gray-700">Gerenciar Arquivos</a></li>
+                <li><a href="/professor/index.html" class="block py-2 px-4 rounded hover:bg-gray-700">Dashboard do Professor</a></li>
+            </ul>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="flex-1 ml-0 transition-all duration-300" id="mainContent">
+            <header class="bg-white shadow-md p-4 flex items-center justify-between">
+                <button id="menuButton" class="text-gray-800 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+                <h1 class="text-3xl font-bold">Dashboard do Professor</h1>
+            </header>
     <header>
         <h1>Dashboard do Professor</h1>
         <nav>
@@ -20,33 +44,59 @@
 
     <main>
         <section id="turmas">
-            <h2>Turmas</h2>
-            <ul id="turmas-lista">
-                <!-- Lista de turmas será carregada dinamicamente -->
+            <h2 class="text-2xl font-bold mb-4">Turmas</h2>
+            <ul id="turmas-lista" class="list-disc pl-5">
+                <!-- Lista de turmas será carregada aqui -->
             </ul>
         </section>
-
+    
         <section id="gabaritos">
-            <h2>Gabaritos</h2>
-            <form id="gabarito-form">
-                <label for="turma">Turma:</label>
-                <select id="turma" required>
-                    <option value="" disabled selected>Selecione uma turma</option>
-                </select>
-                <label for="arquivo-gabarito">Enviar Gabarito:</label>
-                <input type="file" id="arquivo-gabarito" required>
-                <button type="submit">Enviar</button>
-            </form>
+            <h2 class="text-2xl font-bold mb-4">Gabaritos</h2>
+            <ul id="gabaritos-lista" class="list-disc pl-5">
+                <!-- Lista de gabaritos será carregada aqui -->
+            </ul>
         </section>
-
+        
         <section id="notas">
-            <h2>Notas</h2>
-            <ul id="notas-lista">
-                <!-- Lista de notas será carregada dinamicamente -->
+            <h2 class="text-2xl font-bold mb-4">Notas</h2>
+            <button onclick="listarDados('notas', 'notas-lista')" class="bg-blue-500 text-white px-4 py-2 rounded">Listar Notas</button>
+            <ul id="notas-lista" class="list-disc pl-5"></ul>
+        </section>
+        <section id="adicionar-notas">
+            <h2 class="text-2xl font-bold mb-4">Adicionar Notas</h2>
+            <button id="abrirModal" class="bg-green-500 text-white px-4 py-2 rounded">Adicionar Notas</button>
+        </section>
+        <!-- Modal para adicionar notas -->
+        <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded shadow-lg w-96">
+                <h3 class="text-xl font-bold mb-4">Adicionar Notas</h3>
+                <form id="form-adicionar-notas">
+                    <input type="text" id="turma" placeholder="Turma" class="border p-2 rounded mb-2 w-full">
+                    <input type="text" id="disciplina" placeholder="Disciplina" class="border p-2 rounded mb-2 w-full">
+                    <textarea id="alunos" placeholder='[{"nome": "Gabriel", "notas": [10, 9, 8]}]' class="border p-2 rounded mb-2 w-full"></textarea>
+                    <div class="flex justify-end space-x-2">
+                        <button type="button" id="fecharModal" class="bg-gray-500 text-white px-4 py-2 rounded">Cancelar</button>
+                        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <section id="foruns">
+            <h2 class="text-2xl font-bold mb-4">Fóruns</h2>
+            <ul id="foruns-lista" class="list-disc pl-5">
+                <!-- Lista de fóruns será carregada aqui -->
+            </ul>
+        </section>
+    
+        <section id="quizzes">
+            <h2 class="text-2xl font-bold mb-4">Quizzes</h2>
+            <ul id="quizzes-lista" class="list-disc pl-5">
+                <!-- Lista de quizzes será carregada aqui -->
             </ul>
         </section>
     </main>
-
+</div>
     <script src="js/scripts.js"></script>
 </body>
 </html>

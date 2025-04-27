@@ -8,18 +8,63 @@ const sanitize = require('sanitize-filename');
 // Caminho base para a pasta resources
 const resourcesPath = path.join(__dirname, '../resources');
 
+// Listar Arquivos Recursivamente
+const listFilesRecursively = (dirPath) => {
+    let results = [];
+    const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+
+    entries.forEach((entry) => {
+        const fullPath = path.join(dirPath, entry.name);
+        if (entry.isDirectory()) {
+            results = results.concat(listFilesRecursively(fullPath));
+        } else if (entry.isFile()) {
+            results.push(fullPath);
+        }
+    });
+
+    return results;
+};
+// Função para listar todos os arquivos recursivamente
+
+
+
 // Listar arquivos em uma pasta
 router.get('/list/:turma/:disciplina', (req, res) => {
     const { turma, disciplina } = req.params;
     const dirPath = path.join(resourcesPath, turma, disciplina);
 
-    fs.readdir(dirPath, (err, files) => {
-        if (err) {
-            return res.status(500).json({ error: `Erro ao listar arquivos: ${err.message}` });
-        }
+    if (!fs.existsSync(dirPath)) {
+        return res.status(404).json({ error: 'Diretório não encontrado.' });
+    }
+
+    try {
+        const files = listFilesRecursively(dirPath);
         res.json(files);
-    });
+    } catch (err) {
+        res.status(500).json({ error: `Erro ao listar arquivos: ${err.message}` });
+    }
 });
+
+
+// Função para listar todos os arquivos recursivamente
+
+
+// Endpoint para listar todos os arquivos
+router.get('/list-all', (req, res) => {
+    try {
+        const files = listFilesRecursively(resourcesPath);
+        const formattedFiles = files.map((file) => {
+            const relativePath = path.relative(resourcesPath, file);
+            const [turma, disciplina, semana, arquivo] = relativePath.split(path.sep);
+            return { turma, disciplina, semana, arquivo };
+        });
+        res.json(formattedFiles);
+    } catch (err) {
+        console.error('Erro ao listar todos os arquivos:', err);
+        res.status(500).json({ error: 'Erro ao listar todos os arquivos.' });
+    }
+});
+
 
 // Fazer upload de um arquivo
 router.post('/upload/:turma/:disciplina/:semana', (req, res) => {
